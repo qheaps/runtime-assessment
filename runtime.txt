@@ -1,0 +1,21 @@
+tinyArr
+insert time: 16.7 micro secs
+append time: 49.3 micro secs
+
+smallArr
+insert time: 23.4 micro secs
+append time: 59.2 micro secs
+
+mediumArr
+insert time: 95.2 micro secs
+append time: 85.7 micro secs
+
+largeArr
+insert time: 4.3 ms
+append time: 351.1 micro seconds
+
+extraLargeArr
+insert time: 455.3 ms
+append time: 1.4 ms
+
+doublerInsert scales better when using shorter arrays, although due to the nature of unshift as an O(n^2), as the list size increases the performance will degrade. This is due to unshifts behavior of cycling through the list twice to first move the element, and cycling through it again to move the indexes around. DoublerAppend functions better as the list size increases, as appending an item does not require all indexes in the list to be rearranged as unshift does.
